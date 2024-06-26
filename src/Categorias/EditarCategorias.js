@@ -19,7 +19,7 @@ export default function EditarCategorias() {
 
     const cargarCategoria = async () => {
         try {
-            const resultado = await axios.get(`http://localhost:8081/api-ti/categorias/${id}`);
+            const resultado = await axios.get(`http://ti.app.informaticapp.com:4181/api-ti/categorias/${id}`);
             setCategoria(resultado.data);
         } catch (error) {
             console.error('Error al cargar la categoría:', error);
@@ -33,7 +33,7 @@ export default function EditarCategorias() {
     const onSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:8081/api-ti/categorias/${id}`, categoria);
+            await axios.put(`http://ti.app.informaticapp.com:4181/api-ti/categorias/${id}`, categoria);
             navegacion('/ListarCategorias');
         } catch (error) {
             console.error('Error al editar categoría:', error);

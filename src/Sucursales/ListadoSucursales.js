@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './ListadoSucursales.css';
 
 export default function ListadoSucursales() {
-    const urlBase = "http://localhost:8081/api-ti/sucursales";
+    const urlBase = "http://ti.app.informaticapp.com:4181/api-ti/sucursales";
     const [sucursales, setSucursales] = useState([]);
     const [error, setError] = useState('');
 

@@ -22,7 +22,7 @@ export default function AgregarLugar() {
     const onSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:8081/api-ti/lugares", { ...lugar, estado: 1 });
+            await axios.post("http://ti.app.informaticapp.com:4181/api-ti/lugares", { ...lugar, estado: 1 });
             navegacion('/ListarLugares');
         } catch (error) {
             console.error('Error al agregar lugar:', error);

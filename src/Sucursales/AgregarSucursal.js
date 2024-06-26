@@ -21,7 +21,7 @@ export default function AgregarSucursal() {
 
     const cargarLugares = async () => {
         try {
-            const resultado = await axios.get("http://localhost:8081/api-ti/lugares");
+            const resultado = await axios.get("http://ti.app.informaticapp.com:4181/api-ti/lugares");
             setLugares(resultado.data);
         } catch (error) {
             console.error('Error al cargar lugares:', error);
@@ -42,7 +42,7 @@ export default function AgregarSucursal() {
                 horaApertura, // Usar directamente la hora sin milisegundos
                 lugar: { id: parseInt(idLugar) }
             };
-            await axios.post("http://localhost:8081/api-ti/sucursales", nuevaSucursal);
+            await axios.post("http://ti.app.informaticapp.com:4181/api-ti/sucursales", nuevaSucursal);
             navegacion('/ListadoSucursales');
         } catch (error) {
             console.error('Error al agregar sucursal:', error);

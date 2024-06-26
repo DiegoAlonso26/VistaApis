@@ -23,7 +23,7 @@ export default function EditarSucursal() {
 
     const cargarLugares = async () => {
         try {
-            const resultado = await axios.get("http://localhost:8081/api-ti/lugares");
+            const resultado = await axios.get("http://ti.app.informaticapp.com:4181/api-ti/lugares");
             setLugares(resultado.data);
         } catch (error) {
             console.error('Error al cargar lugares:', error);
@@ -32,7 +32,7 @@ export default function EditarSucursal() {
 
     const cargarSucursal = async () => {
         try {
-            const resultado = await axios.get(`http://localhost:8081/api-ti/sucursales/${id}`);
+            const resultado = await axios.get(`http://ti.app.informaticapp.com:4181/api-ti/sucursales/${id}`);
             setSucursal({
                 representante: resultado.data.representante,
                 nombre: resultado.data.nombre,
@@ -59,7 +59,7 @@ export default function EditarSucursal() {
                 horaApertura, // Usar directamente la hora sin milisegundos
                 lugar: { id: parseInt(idLugar) }
             };
-            await axios.put(`http://localhost:8081/api-ti/sucursales/${id}`, sucursalActualizada);
+            await axios.put(`http://ti.app.informaticapp.com:4181/api-ti/sucursales/${id}`, sucursalActualizada);
             navegacion('/ListadoSucursales');
         } catch (error) {
             console.error('Error al editar la sucursal:', error);

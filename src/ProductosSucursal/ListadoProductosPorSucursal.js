@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 
 export default function ListadoProductosPorSucursal() {
     const { id } = useParams();
-    const urlBase = `http://localhost:8081/api-ti/productos/sucursal/${id}`;
+    const urlBase = `http://ti.app.informaticapp.com:4181/api-ti/productos/sucursal/${id}`;
     const [productos, setProductos] = useState([]);
     const [error, setError] = useState('');
 
@@ -24,7 +24,7 @@ export default function ListadoProductosPorSucursal() {
 
     const eliminarProducto = async (productoId) => {
         try {
-            await axios.delete(`http://localhost:8081/api-ti/productos/${productoId}`);
+            await axios.delete(`http://ti.app.informaticapp.com:4181/api-ti/productos/${productoId}`);
             cargarProductos();
         } catch (error) {
             if (error.response && error.response.status === 400) {

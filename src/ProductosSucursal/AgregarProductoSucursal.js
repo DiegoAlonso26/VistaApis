@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 export default function AgregarProductoSucursal() {
     const { sucursalId } = useParams();
-    const urlBase = "http://localhost:8081/api-ti/productos";
+    const urlBase = "http://ti.app.informaticapp.com:4181/api-ti/productos";
     const [nombre, setNombre] = useState('');
     const [precioMayor, setPrecioMayor] = useState('');
     const [precioMenor, setPrecioMenor] = useState('');
@@ -23,7 +23,7 @@ export default function AgregarProductoSucursal() {
 
     const cargarCategorias = async () => {
         try {
-            const resultado = await axios.get("http://localhost:8081/api-ti/categorias");
+            const resultado = await axios.get("http://ti.app.informaticapp.com:4181/api-ti/categorias");
             setCategorias(resultado.data);
         } catch (error) {
             setError('Error al cargar categorías');
@@ -33,7 +33,7 @@ export default function AgregarProductoSucursal() {
 
     const cargarAlmacenes = async () => {
         try {
-            const resultado = await axios.get("http://localhost:8081/api-ti/almacenes");
+            const resultado = await axios.get("http://ti.app.informaticapp.com:4181/api-ti/almacenes");
             setAlmacenes(resultado.data);
         } catch (error) {
             setError('Error al cargar almacenes');

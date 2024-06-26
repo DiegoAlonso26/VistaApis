@@ -26,7 +26,7 @@ export default function EditarProducto() {
 
     const cargarProducto = async () => {
         try {
-            const resultado = await axios.get(`http://localhost:8081/api-ti/productos/${id}`);
+            const resultado = await axios.get(`http://ti.app.informaticapp.com:4181/api-ti/productos/${id}`);
             const producto = resultado.data;
             setNombre(producto.nombre);
             setPrecioMayor(producto.precio_mayor);
@@ -43,7 +43,7 @@ export default function EditarProducto() {
 
     const cargarCategorias = async () => {
         try {
-            const resultado = await axios.get('http://localhost:8081/api-ti/categorias');
+            const resultado = await axios.get('http://ti.app.informaticapp.com:4181/api-ti/categorias');
             setCategorias(resultado.data);
         } catch (error) {
             console.error('Error al cargar categorías:', error);
@@ -52,7 +52,7 @@ export default function EditarProducto() {
 
     const cargarAlmacenes = async () => {
         try {
-            const resultado = await axios.get('http://localhost:8081/api-ti/almacenes');
+            const resultado = await axios.get('http://ti.app.informaticapp.com:4181/api-ti/almacenes');
             setAlmacenes(resultado.data);
         } catch (error) {
             console.error('Error al cargar almacenes:', error);
@@ -61,7 +61,7 @@ export default function EditarProducto() {
 
     const cargarSucursales = async () => {
         try {
-            const resultado = await axios.get('http://localhost:8081/api-ti/sucursales');
+            const resultado = await axios.get('http://ti.app.informaticapp.com:4181/api-ti/sucursales');
             setSucursales(resultado.data);
         } catch (error) {
             console.error('Error al cargar sucursales:', error);
@@ -80,7 +80,7 @@ export default function EditarProducto() {
                 almacen: { id: almacenId },
                 sucursal: { id: sucursalId }
             };
-            await axios.put(`http://localhost:8081/api-ti/productos/${id}`, producto);
+            await axios.put(`http://ti.app.informaticapp.com:4181/api-ti/productos/${id}`, producto);
             navigate('/ListadoProductos');
         } catch (error) {
             setError('Error al actualizar el producto');

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './ListadoProductos.css';
 
 export default function ListadoProductos() {
-    const urlBase = "http://localhost:8081/api-ti/productos";
+    const urlBase = "http://ti.app.informaticapp.com:4181/api-ti/productos";
     const [productos, setProductos] = useState([]);
     const [error, setError] = useState('');
 

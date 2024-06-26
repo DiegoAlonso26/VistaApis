@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function ListadoLugares() {
-    const urlBase = "http://localhost:8081/api-ti/lugares";
+    const urlBase = "http://ti.app.informaticapp.com:4181/api-ti/lugares";
     const [lugares, setLugares] = useState([]);
     const [error, setError] = useState('');
 

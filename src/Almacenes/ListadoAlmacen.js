@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function ListadoAlmacenes() {
-    const urlBase = "http://localhost:8081/api-ti/almacenes";
+    const urlBase = "http://ti.app.informaticapp.com:4181/api-ti/almacenes";
     const [almacenes, setAlmacenes] = useState([]);
     const [mensajeError, setMensajeError] = useState('');
 

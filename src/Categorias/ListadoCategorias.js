@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function ListadoCategorias() {
-    const urlBase = "http://localhost:8081/api-ti/categorias";
+    const urlBase = "http://ti.app.informaticapp.com:4181/api-ti/categorias";
     const [categorias, setCategorias] = useState([]);
     const [error, setError] = useState('');
 

@@ -22,7 +22,7 @@ export default function EditarLugar() {
 
     const cargarLugar = async () => {
         try {
-            const resultado = await axios.get(`http://localhost:8081/api-ti/lugares/${id}`);
+            const resultado = await axios.get(`http://ti.app.informaticapp.com:4181/api-ti/lugares/${id}`);
             setLugar(resultado.data);
         } catch (error) {
             console.error('Error al cargar el lugar:', error);
@@ -36,7 +36,7 @@ export default function EditarLugar() {
     const onSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:8081/api-ti/lugares/${id}`, lugar);
+            await axios.put(`http://ti.app.informaticapp.com:4181/api-ti/lugares/${id}`, lugar);
             navegacion('/ListarLugares');
         } catch (error) {
             console.error('Error al editar lugar:', error);

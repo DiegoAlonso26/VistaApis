@@ -20,7 +20,7 @@ export default function AgregarAlmacen() {
 
     const cargarLugares = async () => {
         try {
-            const resultado = await axios.get("http://localhost:8081/api-ti/lugares");
+            const resultado = await axios.get("http://ti.app.informaticapp.com:4181/api-ti/lugares");
             setLugares(resultado.data);
         } catch (error) {
             console.error('Error al cargar lugares:', error);
@@ -40,7 +40,7 @@ export default function AgregarAlmacen() {
                 telefonoSupervisor,
                 lugar: { id: parseInt(idLugar) }
             };
-            await axios.post("http://localhost:8081/api-ti/almacenes", nuevoAlmacen);
+            await axios.post("http://ti.app.informaticapp.com:4180/api-ti/almacenes", nuevoAlmacen);
 
             //http://ti.app.informaticapp.com:4169/api-ti/almacenes
             navegacion('/ListadoAlmacenes');

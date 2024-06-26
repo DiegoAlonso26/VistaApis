@@ -22,7 +22,7 @@ export default function EditarAlmacen() {
 
     const cargarAlmacen = async () => {
         try {
-            const resultado = await axios.get(`http://localhost:8081/api-ti/almacenes/${id}`);
+            const resultado = await axios.get(`http://ti.app.informaticapp.com:4181/api-ti/almacenes/${id}`);
             setAlmacen(resultado.data);
         } catch (error) {
             console.error('Error al cargar el almacen:', error);
@@ -31,7 +31,7 @@ export default function EditarAlmacen() {
 
     const cargarLugares = async () => {
         try {
-            const resultado = await axios.get("http://localhost:8081/api-ti/lugares");
+            const resultado = await axios.get("http://ti.app.informaticapp.com:4181/api-ti/lugares");
             setLugares(resultado.data);
         } catch (error) {
             console.error('Error al cargar lugares:', error);
@@ -45,7 +45,7 @@ export default function EditarAlmacen() {
     const onSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:8081/api-ti/almacenes/${id}`, almacen);
+            await axios.put(`http://ti.app.informaticapp.com:4181/api-ti/almacenes/${id}`, almacen);
             navegacion('/ListadoAlmacenes');
         } catch (error) {
             console.error('Error al editar almacen:', error);

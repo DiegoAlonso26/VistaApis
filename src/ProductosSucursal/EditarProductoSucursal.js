@@ -18,7 +18,7 @@ export default function EditarProductoSucursal() {
 
   const cargarProductoSucursal = async () => {
     try {
-      const resultado = await axios.get(`http://localhost:8081/api-ti/productos-sucursal/buscarProductoSucursal/${id}`);
+      const resultado = await axios.get(`http://ti.app.informaticapp.com:4181/api-ti/productos-sucursal/buscarProductoSucursal/${id}`);
       setProductoId(resultado.data.producto.id);
       setCodigo(resultado.data.codigo);
       setSucursalId(resultado.data.sucursal.id);
@@ -30,7 +30,7 @@ export default function EditarProductoSucursal() {
 
   const cargarProductos = async () => {
     try {
-      const resultado = await axios.get("http://localhost:8081/api-ti/productos");
+      const resultado = await axios.get("http://ti.app.informaticapp.com:4181/api-ti/productos");
       setProductos(resultado.data);
     } catch (error) {
       console.error('Error al cargar productos:', error);
@@ -42,7 +42,7 @@ export default function EditarProductoSucursal() {
     e.preventDefault();
     try {
       const productoSucursalActualizado = { producto: { id: productoId }, sucursal: { id: sucursalId }, codigo };
-      await axios.put(`http://localhost:8081/api-ti/productos-sucursal/actualizarProductoSucursal/${id}`, productoSucursalActualizado);
+      await axios.put(`http://ti.app.informaticapp.com:4181/api-ti/productos-sucursal/actualizarProductoSucursal/${id}`, productoSucursalActualizado);
       navigate(`/listar-productos-sucursal/${sucursalId}`);
     } catch (error) {
       console.error('Error al actualizar producto de sucursal:', error);
